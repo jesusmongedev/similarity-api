@@ -3,6 +3,7 @@ import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/toast";
 
 export const metadata = {
   title: "Similarity Api",
@@ -27,6 +28,7 @@ export default function RootLayout({
           {/*  @ts-expect-error Server Component */}
           <Navbar />
         </Providers>
+        <Toaster position="bottom-right" />
         {/* Allow for more height on mobile devices */}
         <div className="h-40 md:hidden" />
       </body>
