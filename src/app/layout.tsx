@@ -1,14 +1,10 @@
 import Navbar from "@/components/Navbar";
-import Providers from "@/components/Providers";
-import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toast";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
-import { Toaster } from "@/components/ui/toast";
 
-export const metadata = {
-  title: "Similarity Api",
-  description: "A project to learn modern full-stack development made by Josh.",
-};
+import Providers from "@/components/Providers";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,12 +20,14 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
         <Providers>
-          {children}
-          {/*  @ts-expect-error Server Component */}
+          {/* @ts-expect-error Server Component */}
           <Navbar />
+          <Toaster position="bottom-right" />
+
+          <main>{children}</main>
         </Providers>
-        <Toaster position="bottom-right" />
-        {/* Allow for more height on mobile devices */}
+
+        {/* Allow more height for mobile menu on mobile */}
         <div className="h-40 md:hidden" />
       </body>
     </html>
