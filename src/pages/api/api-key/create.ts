@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
 import { nanoid } from "nanoid";
-import { withMethods } from "@/lib/with-methods";
+import { withMethods } from "@/lib/api-middlewares/with-methods";
 
 const handler = async (
   req: NextApiRequest,
