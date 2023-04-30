@@ -3,7 +3,7 @@ import { ZodIssue } from "zod";
 
 export interface CreateApiData {
   error: string | ZodIssue[] | null;
-  createApiKey: ApiKey | null;
+  createdApiKey: ApiKey | null;
 }
 
 export interface RevokeApidata {
